@@ -1,0 +1,112 @@
+$red: hsl(0, 100%, 74%) 
+$green: hsl(154, 59%, 51%)
+$blue: hsl(248, 32%, 49%)
+$dark_blue: hsl(249, 10%, 26%) 
+$grayish_blue: hsl(246, 25%, 77%)
+$font_size: 16px
+$font_family: 'Poppins', sans-serif
+
+*,
+*::after,
+*::before
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html,
+body
+  min-height: 100%
+
+body,
+a,
+input,
+button
+  font-family: $font_family
+  font-size: $font_size
+  line-height: 27px
+
+.main-content
+  max-width: 1220px
+  margin: 0 auto
+  height: 100%
+  padding: 94px 24px
+  
+  background-image: url("../images/bg-intro-mobile.png")
+  background-color: $red
+
+.hero
+  margin-bottom: 59px
+
+  h1
+    font-size: 27px
+    line-height: 33px
+    color: white
+    text-align: center
+    margin-bottom: 23px
+
+  p
+    color: white
+    text-align: center
+
+.cta-text
+  text-align: center
+  background-color: $blue
+  color: white
+  padding: 18px 45px
+  display: block
+  border-radius: 12px
+  text-decoration: none
+  margin: 0 auto 24px
+  box-shadow: 0px 6px 0px 0px #df6d6d
+
+.registration-form
+  background-color: white
+  border-radius: 9px
+  padding: 23px 24px
+  box-shadow: 0px 6px 0px 0px #df6d6d
+
+  button
+    background-color: $green
+    color: white
+    text-transform: uppercase
+    display: block
+    width: 100%
+    margin-bottom: 10px
+    border: 1px solid darken($green, 2%)
+    outline: none
+    border-radius: 6px
+    padding: 13px
+    font-size: 17px
+    line-height: 29px
+    font-weight: 500
+    box-shadow:  0px 3px 0px 0px #2fb179
+
+.terms-conditions
+  color: $grayish_blue
+  font-size: 12px
+  line-height: 19px
+  display: block
+  text-align: center
+  white-space: pre-line
+
+  a
+    font-size: 12px
+    line-height: 19px
+    display: inline-block
+    font-weight: 600
+    color: $red
+    text-decoration: none
+
+input
+  border: 1px solid #dedede
+  padding: 13px 18px
+  margin-bottom: 17px
+  display: block
+  width: 100%
+  border-radius: 5px
+  font-size: 14px
+  color: $dark_blue
+
+  &::placeholder
+    font-weight: 600
+    color: $dark_blue
