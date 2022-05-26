@@ -64,6 +64,10 @@ body
   margin-left: auto
   margin-right: auto
 
+  &:hover
+    background-color: darken($blue, 5%)
+    cursor: pointer
+
 .registration-form
   background-color: white
   border-radius: 9px
@@ -90,6 +94,65 @@ body
     font-weight: 500
     box-shadow:  0px 3px 0px 0px #2fb179
 
+    &:hover
+      opacity: .7
+      cursor: pointer
+      
+    &:active
+      opacity: 1
+      background-color: darken($green, 5%)
+      transition: all 1s
+
+fieldset
+  position: relative
+  border: 0
+  margin-bottom: 17px
+
+.error
+  display: none
+
+input
+  border: 1px solid #dedede
+  padding: 13px 18px
+  display: block
+  width: 100%
+  border-radius: 5px
+  font-size: 14px
+  color: $dark_blue
+  outline: 0
+  font-weight: 600
+
+  + img
+    display: none
+    opacity: 0
+
+  &::placeholder
+    font-weight: 600
+    color: $dark_blue
+
+form
+  &.invalid
+    input
+      &:not(:focus):invalid
+        color: $red
+        border: 2px solid $red
+
+        + img
+          display: block
+          opacity: 1
+          position: absolute
+          bottom: 0
+          top: 17px
+          right: 28px
+
+        ~ .error
+          font-size: 11px
+          display: block
+          text-align: right
+          color: $red
+          font-style: italic
+          font-weight: 500
+
 .terms-conditions
   color: $grayish_blue
   font-size: 12px
@@ -106,21 +169,10 @@ body
     color: $red
     text-decoration: none
 
-input
-  border: 1px solid #dedede
-  padding: 13px 18px
-  margin-bottom: 17px
-  display: block
-  width: 100%
-  border-radius: 5px
-  font-size: 14px
-  color: $dark_blue
-
-  &::placeholder
-    font-weight: 600
-    color: $dark_blue
-
 @media screen and ( min-width: 998px )
+  body
+    background-image: url("../images/bg-intro-desktop.png")
+
   .main-content
     display: grid
     grid-template-areas: "c-hero c-cta" "c-hero c-form"
@@ -165,9 +217,11 @@ input
       padding: 14px 14px 9px
       margin-bottom: 15px
 
+  fieldset
+    margin-bottom: 21px
+
   input
-    padding: 16px 30px 12px
-    margin-bottom: 19px
+    padding: 14px 30px 12px
   
   .terms-conditions
     white-space: normal

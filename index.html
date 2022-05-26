@@ -23,16 +23,37 @@
       <strong>Try it free 7 days</strong> then $20/mo. thereafter
     </a>
 
-    <form action="/" class="registration-form">
-      <input type="text" id="first-name" name="first-name" placeholder="First Name">
-      <input type="text" id="last-name" name="last-name" placeholder="Last Name">
-      <input type="email" id="email" name="email" placeholder="Email Address">
-      <input type="password" id="password" name="password" placeholder="Password">
+    <form action="/" class="registration-form" id="signupForm">
+      <fieldset>
+        <input type="text" id="first-name" name="first-name" placeholder="First Name" required minlength="3" autofocus>
+        <img src="assets/images/icon-error.svg" alt="x" title="Check your first name">
+        <span class="error">First Name cannot be empty</span>
+      </fieldset>
 
-      <button type="submit">Claim your free trial </button>
+      <fieldset>
+        <input type="text" id="last-name" name="last-name" placeholder="Last Name" required minlength="5">
+        <img src="assets/images/icon-error.svg" alt="x" title="Check your last name">
+        <span class="error">Last Name cannot be empty</span>
+      </fieldset>
+      
+      <fieldset>
+        <input type="email" id="email" name="email" placeholder="Email Address" required minlength="10">
+        <img src="assets/images/icon-error.svg" alt="x" title="Check your email">
+        <span class="error">Looks like this is not an email</span>
+      </fieldset>
+
+      <fieldset>
+        <input type="password" id="password" name="password" placeholder="Password" required minlength="10">
+        <img src="assets/images/icon-error.svg" alt="x" title="Check your password">
+        <span class="error">Password cannot be empty</span>
+      </fieldset>
+
+      <button type="button" id="signupButton">Claim your free trial </button>
       <small class="terms-conditions">By clicking the button, you are agreeing to 
         our <a href="!#" title="See more">Terms and Services</a></small>
     </form>
   </main>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
