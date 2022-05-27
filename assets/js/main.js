@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     signupButton.addEventListener('click', function(event){
       const inputElements = signupForm.querySelectorAll(':invalid')
 
-      if( inputElements != null){
+      if( inputElements.length > 0){
         event.preventDefault()
         event.stopImmediatePropagation();
         signupForm.classList.add('invalid')
@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function(){
             item.classList.add('pattern-mismatch')
           }
         })
+      }else{
+        signupForm.classList.remove('invalid')
       }
     })
   }
