@@ -153,6 +153,25 @@ form
           font-style: italic
           font-weight: 500
 
+      &.empty
+        ~ .error::after
+          content: ' cannot be empty'
+          
+      &.too-short
+        ~ .error::after
+          content: ' is too short'
+
+      &.too-long
+        ~ .error::after
+          content: ' is too long'
+
+      &.type-mismatch
+        ~ .error::before
+          content: 'Looks like this is not an '
+        
+        ~ .error::after
+          content: ''
+
 .terms-conditions
   color: $grayish_blue
   font-size: 12px
@@ -175,12 +194,12 @@ form
 
   .main-content
     display: grid
-    grid-template-areas: "c-hero c-cta" "c-hero c-form"
+    grid-template-areas: "c-hero c-form"
     grid-template-columns: 1fr 1fr
-    grid-template-rows: auto 1fr
+    grid-template-rows: 1fr
     align-items: center
     column-gap: 33px
-    row-gap: 0
+    row-gap: 20px
     min-height: 100vh
     padding-top: 104px
 
@@ -198,20 +217,25 @@ form
     p
       text-align: left
 
+  .signup-content
+    grid-area: c-form
+    display: flex
+    flex-direction: column
+    gap: 20px
+
   .cta-text
-    grid-area: c-cta
     width: 100%
     max-width: 538px
-    margin: 15px 0 0
+    margin: 0
 
   .registration-form
-    grid-area: c-form
     width: 100%
     max-width: 538px
     min-height: 478px
     padding: 40px 36px
     margin-left: 0
     margin-right: 0
+    align-self: start
 
     button
       padding: 14px 14px 9px
@@ -231,4 +255,3 @@ form
     a
       font-size: 11px
       line-height: 20px
-  

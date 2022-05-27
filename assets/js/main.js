@@ -1,12 +1,30 @@
 document.addEventListener('DOMContentLoaded', function(){
-  let signupForm = document.getElementById('signupForm')
-  let signupButton = document.getElementById('signupButton')
+  const signupForm = document.getElementById('signupForm')
+  const signupButton = document.getElementById('signupButton')
 
   if(signupForm != null && signupButton != null){
     signupButton.addEventListener('click', function(event){
-      if(signupForm.querySelectorAll(':invalid') != null){
-        event.preventDefault
+      const inputElements = signupForm.querySelectorAll(':invalid')
+
+      if( inputElements != null){
+        event.preventDefault()
+        event.stopImmediatePropagation();
         signupForm.classList.add('invalid')
+
+        inputElements.forEach( item => {
+          if(item.validity.tooShort){
+            item.classList.add('too-short')
+          }
+          else if(item.validity.tooLong){
+            item.classList.add('too-long')
+          }
+          else if(item.validity.valueMissing){
+            item.classList.add('empty')
+          }
+          else if(item.validity.typeMismatch){
+            item.classList.add('type-mismatch')
+          }
+        })
       }
     })
   }
