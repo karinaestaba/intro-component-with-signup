@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function(){
           else if(item.validity.typeMismatch){
             item.classList.add('type-mismatch')
           }
+          else if(item.validity.patternMismatch){
+            item.classList.add('pattern-mismatch')
+          }
         })
       }
     })

@@ -24,27 +24,27 @@
         <strong>Try it free 7 days</strong> then $20/mo. thereafter
       </a>
 
-      <form action="/#" class="registration-form" id="signupForm">
+      <form action="/#" class="registration-form" id="signupForm" autocomplete="on">
         <fieldset>
-          <input type="text" id="first-name" name="first-name" placeholder="First Name" required minlength="3" maxlength="50" autofocus>
+          <input type="text" id="first-name" name="first-name" placeholder="First Name" required autofocus pattern="[a-zA-Z'-'\s]*">
           <img src="assets/images/icon-error.svg" alt="x" title="Check your first name">
           <span class="error">First Name</span>
         </fieldset>
 
         <fieldset>
-          <input type="text" id="last-name" name="last-name" placeholder="Last Name" required minlength="5" maxlength="50">
+          <input type="text" id="last-name" name="last-name" placeholder="Last Name" required pattern="[a-zA-Z'-'\s]*">
           <img src="assets/images/icon-error.svg" alt="x" title="Check your last name">
           <span class="error">Last Name</span>
         </fieldset>
         
         <fieldset>
-          <input type="email" id="email" name="email" placeholder="Email Address" required minlength="10" maxlength="50">
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
           <img src="assets/images/icon-error.svg" alt="x" title="Check your email">
           <span class="error">email</span>
         </fieldset>
 
         <fieldset>
-          <input type="password" id="password" name="password" placeholder="Password" required minlength="20" maxlength="20">
+          <input type="password" id="password" name="password" placeholder="Password" required maxlength="20">
           <img src="assets/images/icon-error.svg" alt="x" title="Check your password">
           <span class="error">Password</span>
         </fieldset>

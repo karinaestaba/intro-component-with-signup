@@ -168,6 +168,10 @@ form
         ~ .error::after
           content: ' is too long'
 
+      &.pattern-mismatch
+        ~ .error::after
+          content: ' does not have a valid format'
+
       &.type-mismatch
         ~ .error::before
           content: 'Looks like this is not an '
